@@ -1,17 +1,22 @@
-package com.team2.vo;
+package com.pet.sns.model.dto;
 
-public class Member {
+public class User {
 	private String email;
-	private String pw;
+	private String password;
 	private String nickname;
 	private String phone;
-	
-	public Member() {
+
+	public User() {
 	}
 
-	public Member(String email, String pw, String nickname, String phone) {
+	public User(String email, String password) {
 		this.email = email;
-		this.pw = pw;
+		this.password = password;
+	}
+
+	public User(String email, String password, String nickname, String phone) {
+		this.email = email;
+		this.password = password;
 		this.nickname = nickname;
 		this.phone = phone;
 	}
@@ -24,12 +29,12 @@ public class Member {
 		this.email = email;
 	}
 
-	public String getPw() {
-		return pw;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPw(String pw) {
-		this.pw = pw;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getNickname() {
