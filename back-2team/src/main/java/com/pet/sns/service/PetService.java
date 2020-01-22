@@ -1,11 +1,10 @@
-package com.pet.sns.model.dao;
-
+package com.pet.sns.service;
 
 import java.util.List;
 
 import com.pet.sns.model.dto.Pet;
 
-public interface PetDao {
+public interface PetService {
 	public List<Pet> selectAll(String unum);
 	public Pet selectOne(String petnum);
 	public void insert(Pet p);

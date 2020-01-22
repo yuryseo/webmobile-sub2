@@ -31,7 +31,6 @@ public class UserRestController {
 	@RequestMapping(value = "/user/{unum}", method = RequestMethod.GET)
 	@ApiOperation("회원정보 검색")
 	public User selectOne(@PathVariable String unum) {
-		System.out.println(unum);
 		return uservice.selectOne(unum);
 	}
 	

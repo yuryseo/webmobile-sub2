@@ -7,19 +7,24 @@ public class Pet {
 	private String animal;
 	private String gender;
 	private String breed;
-	private String birthday;
+	private String age;
+	private String firstday;
+	private String img;
 
 	public Pet() {
 	}
 
-	public Pet(String petnum, String unum, String name, String animal, String gender, String breed, String birthday) {
+	public Pet(String petnum, String unum, String name, String animal, String gender, String breed, String age,
+			String firstday, String img) {
 		this.petnum = petnum;
 		this.unum = unum;
 		this.name = name;
 		this.animal = animal;
 		this.gender = gender;
 		this.breed = breed;
-		this.birthday = birthday;
+		this.age = age;
+		this.firstday = firstday;
+		this.img = img;
 	}
 
 	public String getPetnum() {
@@ -70,11 +75,30 @@ public class Pet {
 		this.breed = breed;
 	}
 
-	public String getBirthday() {
-		return birthday;
+	public String getAge() {
+		return age;
 	}
 
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
+	public void setAge(String age) {
+		this.age = age;
 	}
+
+	public String getFirstday() {
+		return firstday;
+	}
+
+	public void setFirstday(String firstday) {
+		this.firstday = firstday;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	
+	
 }
