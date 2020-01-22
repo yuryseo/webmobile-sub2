@@ -18,7 +18,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {		
 		return new Docket(DocumentationType.SWAGGER_2)
-				.groupName("Customer Management")	// select a spec
+				.groupName("PetSNS Management")	// select a spec
 				.apiInfo(info())
 				.select()//Initiates a builder for api selection.
 				.apis(RequestHandlerSelectors.basePackage("com.pet.sns.controller"))
@@ -28,8 +28,8 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo info() {
-		return new ApiInfoBuilder().title("Customer Management API")
-				.description("<h1>Customer Management</h1>")
+		return new ApiInfoBuilder().title("PetSNS Management API")
+				.description("<h1>PetSNS Management</h1>")
 				.license("ssafy")
 				.version("2.0")
 				.build();
