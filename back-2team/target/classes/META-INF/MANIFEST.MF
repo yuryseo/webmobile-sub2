@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Implementation-Title: back-2team
+Implementation-Title: pet sns project
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: multicampus
 Implementation-Vendor-Id: com.example
