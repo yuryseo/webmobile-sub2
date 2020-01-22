@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>back-2team</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>back-2team</name>
+	<name>pet sns project</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
