@@ -1,4 +1,4 @@
-# front-2team
+# my-project
 
 ## Project setup
 ```
