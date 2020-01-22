@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -49,13 +48,16 @@ public class UserRestController {
 	@ApiOperation("비밀번호 수정")
 	public Map<String, String> updatePassword(@RequestBody User u) {
 		HashMap<String, String> map = new HashMap<String, String>();
+		System.out.println(u);
+		uservice.updatePassword(u);
 		map.put("result", "수정성공");
 		return map;
 	}
 	
-	@RequestMapping(value = "/user/delete", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/deleteuser/{unum}", method = RequestMethod.DELETE)
 	@ApiOperation("회원 삭제")
 	public Map<String, String> delete(@PathVariable String unum) {
+		System.out.println(unum);
 		uservice.delete(unum);
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("result", "삭제성공");
