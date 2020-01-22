@@ -1,4 +1,4 @@
-package com.pet.sns.config;
+package com;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,9 +21,9 @@ public class SwaggerConfig {
 				.groupName("Customer Management")	// select a spec
 				.apiInfo(info())
 				.select()//Initiates a builder for api selection.
-				.apis(RequestHandlerSelectors.basePackage("com.pet.sns.controller"))
+				.apis(RequestHandlerSelectors.basePackage("com.mvc.controller"))
 				//.paths(PathSelectors.any())
-				.paths(PathSelectors.ant("/**"))
+				.paths(PathSelectors.ant("/customers/**"))
 				.build();
 	}
 
