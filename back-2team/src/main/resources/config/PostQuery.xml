@@ -12,7 +12,7 @@
 		from post where pnum=#{pnum}
 	</select>
 
-
+ 
 	<select id="selectall" resultType="post">
 		select pnum,unum,title,img,contents,likes,hits,comments,date,privacy
 		from post
