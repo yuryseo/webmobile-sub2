@@ -9,5 +9,4 @@ public class Back2teamApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Back2teamApplication.class, args);
 	}
-
 }
