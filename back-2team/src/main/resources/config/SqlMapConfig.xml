@@ -4,10 +4,12 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.pet.sns.model.dto.User"   		alias="user"/>
+		<typeAlias type="com.pet.sns.model.dto.Post"   		alias="post"/>
 		<typeAlias type="com.pet.sns.model.dto.Pet"   		alias="pet"/>
 	</typeAliases>
 	<mappers>
 	 <mapper resource="config/UserMapper.xml" />
+	 <mapper resource="config/PostQuery.xml" />
 	 <mapper resource="config/PetMapper.xml" />
 	</mappers>
 </configuration>
