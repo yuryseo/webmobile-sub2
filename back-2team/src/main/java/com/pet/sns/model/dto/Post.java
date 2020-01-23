@@ -35,6 +35,7 @@ public class Post {
 		this.img = img;
 		this.contents = contents;
 		this.date = date;
+		this.privacy = privacy;
 	}
 
 	public Post(int unum, String title, String img, String contents, int likes, int hits, int comments, String date,

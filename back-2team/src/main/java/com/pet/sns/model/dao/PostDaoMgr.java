@@ -8,17 +8,16 @@ import com.pet.sns.model.dto.Post;
 
 @Mapper
 public interface PostDaoMgr {
-	public Post selectone(String num);
+	public Post selectone(int num);
 
 	public List<Post> selectall();
 
-	public List<Post> selectMine();
+	public List<Post> selectmine(int num);
 
 	public void insert(Post post);
 
-	public void update(String num);
+	public void update(Post post);
 
-	public void updateprivacy(String num, String privacy);
+	public void delete(int num);
 
-	public void delete(String num);
 }
