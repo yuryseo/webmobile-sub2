@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper file: 실행 할 쿼리 문을 저장하는 파일. 테이블 하나당 한개씩 작성
+namespace: 작업하는 테이블들을 구분해주기 위한 식별자 -->
+<mapper namespace="board">
+
+<!-- 리절트 맵 정의 : select 한 후의 결과 처리를 위해 정의 해 놓음-->
+   <resultMap id="BoardResult"  type="Board">
+     <result property="num" column="num"/>
+     <result property="pass" column="pass"/>
+     <result property="name" column="name"/>
+     <result property="wdate" column="wdate"/>
+     <result property="title" column="title"/>
+     <result property="content" column="content"/>
+     <result property="count" column="count"/>
+   </resultMap>
+
+  <select id="selectAll" resultMap="BoardResult">
+    select * from board
+  </select>
+
+  <select id="selectOne" parameterType="java.lang.String" resultMap="BoardResult">
+    select * from board where num = #{num}<!-- 파라메터가 하나면 파라메터 명을 아무거나 해줘도 된다. -->
+  </select>
+  
+  <insert id="insert" parameterType="Board">
+  	insert into board(pass, name, wdate, title, content, count) values(#{pass}, #{name}, sysdate(), #{title}, #{content}, "0")  <!-- 내부에서 getter 호출 -->
+  </insert>
+  
+  <update id="update" parameterType="Board">
+  	update board set pass = #{pass},name = #{name},content = #{content},title = #{title} where num = #{num}
+  </update>
+
+  <update id="countUp" parameterType="Board">
+  	update board set count = count+1 where num = #{num}
+  </update>
+ 
+  <delete id="delete" parameterType="Board">
+  	delete from board where num = #{num}
+  </delete>
+
+  <select id="findName" parameterType="java.lang.String" resultMap="BoardResult">
+  	select * from board where name like concat('%',#{name},'%')
+  </select>
+  <select id="findTitle" parameterType="java.lang.String" resultMap="BoardResult">
+  	select * from board where title like concat('%',#{title},'%')
+  </select>
+	<!-- 소문자 string 도 가능하다. java.lang.String 할 필요가 없다 별칭이 등록되어 있다. -->
+
+</mapper>
