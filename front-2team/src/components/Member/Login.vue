@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Modal from "./Modal";
+import Modal from "../Member/Modal";
 
 export default {
   data() {
@@ -25,7 +25,7 @@ export default {
       email: "",
       password: "",
       msg: "",
-      visible: false
+      visible: true
     };
   },
   components: {
