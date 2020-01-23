@@ -6,18 +6,17 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.pet.sns.model.dto.Post;
 
-@Mapper
 public interface PostService {
-	public Post selectone(String num);
+	public Post selectone(int num);
 
 	public List<Post> selectall();
 
-	public List<Post> selectmine();
+	public List<Post> selectmine(int num);
+
 	public void insert(Post post);
 
-	public void update(String num);
+	public void update(Post post);
 
-	public void updateprivacy(String num, String privacy);
+	public void delete(int num);
 
-	public void delete(String num);
 }

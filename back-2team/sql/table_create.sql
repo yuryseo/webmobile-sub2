@@ -28,9 +28,9 @@ create table post(
 	constraint fk_unum foreign key(unum) references user(unum)
 );
 	insert into post(unum,title,img,contents,date)
-    values ('1','우리 강아지 자랑','img','내용',sysdate());
+    values ('4','2번 강아지 자랑','img','내용',sysdate());
 	insert into post(unum,title,img,contents,date)
-    values ('1','고양이','img','내용',current_timestamp());
+    values ('1','고양이123','img','오늘 고양이',current_timestamp());
 
 select pnum,unum,title,img,contents,likes,hits,comments,date,privacy from post;
 
@@ -46,6 +46,7 @@ create table pet(
     age int,
     firstday datetime,
     img varchar(50),
+    intro varchar(100),
 	constraint fk_pet_unum foreign key(unum) references user(unum)
 );
 
@@ -55,6 +56,7 @@ desc user;
 select * from user;
 
 insert into user (email, password, nickname,phone,interest) values ('qwe@gmail.com' , 'qwer1234', '가나다','010','강아지,고양이,물고기');
+insert into user (email, password, nickname,phone,interest) values ('123@gmail.com' , 'qwer1234', '13','010','물고기');
 
 desc post;
 select * from post;
@@ -62,8 +64,28 @@ select * from post;
 desc pet;
 select * from pet;
 
-
+select pnum,unum,title,img,contents,likes,hits,comments,date,privacy
+		from post
+		where unum = 1;
+        
 -- 해시태그 tabel
+create table tag(
+	tnum int  primary key auto_increment,
+	word varchar(50)
+);
+
+-- 게시물_해시태그_테이블
+
+create table post_tag(
+	postnum int,
+    tagnum int,
+    constraint fk_post_tag_pnum foreign key(postnum) references post(pnum),
+    constraint fk_post_tag_tnum foreign key(tagnum) references tag(tnum)
+);
+
+
+
 -- 댓글 tabel
+
 -- 다이어리 tabel
 

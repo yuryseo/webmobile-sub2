@@ -8,36 +8,42 @@
 
 
 	<select id="selectone" parameterType="int" resultType="post">
-		select pnum,unum,title,img,contents,likes,hits,comments,date,privacy
-		from post where pnum=#{pnum}
+		select
+		pnum,unum,title,img,contents,likes,hits,comments,date,privacy
+		from post
+		where pnum=#{pnum}
 	</select>
 
- 
+
 	<select id="selectall" resultType="post">
-		select pnum,unum,title,img,contents,likes,hits,comments,date,privacy
+		select
+		pnum,unum,title,img,contents,likes,hits,comments,date,privacy
 		from post
 	</select>
-	
-	<select id="selectmine"  parameterType="int"  resultType="post">
-		select pnum,unum,title,img,contents,likes,hits,comments,date,privacy
-		from post where unum = #{unum}
+
+	<select id="selectmine" parameterType="int" resultType="post">
+		select
+		pnum,unum,title,img,contents,likes,hits,comments,date,privacy
+		from post
+		where unum = #{unum}
 	</select>
-	
+
 	<insert id="insert" parameterType="post">
-		insert into post(unum,title,img,contents,date)
-		values (#{unum},#{title},#{img},#{contents},sysdate())
-	</insert> 
-	
+		insert into
+		post(unum,title,img,contents,date)
+		values
+		(#{unum},#{title},#{img},#{contents},sysdate())
+	</insert>
+
 	<update id="updatepost">
 		update post set title = #{title},
-						contents = #{contents}
+		contents = #{contents}
+		privacy = #{privacy}
 	</update>
-<!-- 
-	public void updateprivacy(String num, String privacy);
-
-	public void delete(String num);
 	
- -->
+	<delete id="delete" parameterType="int">
+		delete from post where pnum = #{pnum}
+	</delete>
 
 </mapper>
 
