@@ -24,7 +24,7 @@ public class UserDaoImpl implements UserDao{
 
 	@Override
 	public void updatePassword(User u) {
-		session.update("user.updatePassword", u);
+		session.update("user.updatepassword", u);
 	}
 
 	@Override
