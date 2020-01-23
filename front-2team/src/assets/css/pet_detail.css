@@ -1,0 +1,22 @@
+body{
+    background-color: pink;
+}
+.left_box, .right_box {
+    display: inline-block;
+}
+.pet_name, .change_user_profile, .setting, .follwerNum, .followNum, .uploadNum{
+    display: inline-block;
+}
+.left_box{
+    margin-top: 300px;
+    margin-left: 300px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+#profile{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

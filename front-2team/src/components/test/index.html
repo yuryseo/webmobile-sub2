@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> 
+</head>
+<body>
+    <div class="parent_box">
+        
+        <div class="left_box">
+            <img src="../../assets/image/profile_test.jpg"
+            id="profile" width="200" height="200">
+        </div>
+        <div class="right_box">
+            <!-- 동물 종, 성별, 동물의 품종, 처음 만난 날(first day)   -->
+            <button class="change_pet_profile_picture">
+                애완동물 프로필 사진 변경
+            </button><br>
+
+            <div class="pet_name">
+                애완동물 이름
+            </div>
+           
+           
+            <div class="pet_age">
+                나이 : 
+            </div>
+            <div class="pet_firstday">
+                처음 만난 날 : 
+            </div>
+            
+        </div> 
+        <div class="intro_header" font-family="나눔고딕" style="margin-left:350px; margin-top:80px; font-size: larger;">
+            자기소개
+        </div>
+
+        <div class="intro_content" font-family="나눔고딕" style="margin-left:350px; margin-top:30px; font-size: larger;">
+            안녕하세요 반갑습니다 ^_^
+        </div>
+    </div>
+    <style>
+        body{
+            background-color: pink;
+        }
+        .left_box, .right_box {
+            display: inline-block;
+        }
+        .pet_name, .change_user_profile, .setting, .follwerNum, .followNum, .uploadNum{
+            display: inline-block;
+        }
+        .left_box{
+            margin-top: 300px;
+            margin-left: 300px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50px;
+            overflow: hidden;
+            align: middle;
+        }
+        #profile{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</body>
+</html>
