@@ -10,12 +10,13 @@ public class Pet {
 	private String age;
 	private String firstday;
 	private String img;
+	private String intro;
 
 	public Pet() {
 	}
 
 	public Pet(String petnum, String unum, String name, String animal, String gender, String breed, String age,
-			String firstday, String img) {
+			String firstday, String img, String intro) {
 		this.petnum = petnum;
 		this.unum = unum;
 		this.name = name;
@@ -25,6 +26,7 @@ public class Pet {
 		this.age = age;
 		this.firstday = firstday;
 		this.img = img;
+		this.intro = intro;
 	}
 
 	public String getPetnum() {
@@ -99,6 +101,11 @@ public class Pet {
 		this.img = img;
 	}
 
-	
-	
+	public String getIntro() {
+		return intro;
+	}
+
+	public void setIntro(String intro) {
+		this.intro = intro;
+	}
 }
