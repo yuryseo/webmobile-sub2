@@ -1,12 +1,16 @@
-
+import Vue from 'vue'
+import Router from "vue-router";
+import init from '../views/init.vue';
 import Mainpage from '../views/mainpage.vue';
 import petdetail from '../views/pet_detail.vue';
+
+Vue.use(Router);
 
 export default [
   {
     path: '/',
-    name: 'Mainpage',
-    component: Mainpage,
+    name: 'init',
+    component: init,
   },
   {
     path: '/main',
