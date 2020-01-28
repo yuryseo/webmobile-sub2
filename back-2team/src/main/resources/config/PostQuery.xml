@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="post">
+
+
+	<select id="selectone" parameterType="int" resultType="post">
+		select
+		pnum,unum,title,img,contents,likes,hits,comments,date,privacy
+		from post
+		where pnum=#{pnum}
+	</select>
+
+
+	<select id="selectall" resultType="post">
+		select
+		pnum,unum,title,img,contents,likes,hits,comments,date,privacy
+		from post
+	</select>
+
+	<select id="selectmine" parameterType="int" resultType="post">
+		select
+		pnum,unum,title,img,contents,likes,hits,comments,date,privacy
+		from post
+		where unum = #{unum}
+	</select>
+
+	<insert id="insert" parameterType="post">
+		insert into
+		post(unum,title,img,contents,date)
+		values
+		(#{unum},#{title},#{img},#{contents},sysdate())
+	</insert>
+
+	<update id="updatepost">
+		update post set title = #{title},
+		contents = #{contents}
+		privacy = #{privacy}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from post where pnum = #{pnum}
+	</delete>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

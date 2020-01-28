@@ -14,28 +14,24 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-    @Bean
-    public Docket api(){
-        return new Docket(DocumentationType.SWAGGER_2)
-        		.apiInfo(info()) // 스웨거에 표시할 정보
-        		.select()
-                .apis(RequestHandlerSelectors.
-                        basePackage("com.web.sns.controller.user"))
-                //apis package는 controller 위치
-                .paths(PathSelectors.ant("/user/**"))
-                //path : Controller에 @PostMapping("/account/**")이라고 되어있으닊깐
-                .build();
-    }
-    
-    private ApiInfo info() {	//스웨거 인포메이션
-		return new ApiInfoBuilder()
-				.title("공통프로젝트 Management API")
-				.description("2번 프로젝트 관리")
-				.license("SSAFY License")
-				.version("2.0")
+	
+	@Bean
+	public Docket api() {		
+		return new Docket(DocumentationType.SWAGGER_2)
+				.groupName("PetSNS Management")	// select a spec
+				.apiInfo(info())
+				.select()//Initiates a builder for api selection.
+				.apis(RequestHandlerSelectors.basePackage("com.pet.sns.controller"))
+				//.paths(PathSelectors.any())
+				.paths(PathSelectors.ant("/**"))
 				.build();
 	}
 
+	private ApiInfo info() {
+		return new ApiInfoBuilder().title("PetSNS Management API")
+				.description("<h1>PetSNS Management</h1>")
+				.license("ssafy")
+				.version("2.0")
+				.build();
+	}
 }
-
-
