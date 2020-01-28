@@ -77,6 +77,7 @@ create table tag(
 -- 게시물_해시태그_테이블
 
 create table post_tag(
+	no int primary key auto_increment,
 	postnum int,
     tagnum int,
     constraint fk_post_tag_pnum foreign key(postnum) references post(pnum),
@@ -84,6 +85,8 @@ create table post_tag(
 );
 
 
+-- 해시태그 참조
+-- https://velog.io/@juna-dev/%ED%95%B4%EC%8B%9C%ED%83%9C%EA%B7%B8-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-9ak4xocihh
 
 -- 댓글 tabel
 
