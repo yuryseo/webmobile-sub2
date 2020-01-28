@@ -6,12 +6,23 @@ import mutations from './mutations';
 
 Vue.use(Vuex);
 
-const state = {
-  isUser: false,
+const resourceHost = "http://70.12.247.104:9090"
+
+const enhanceAccessToeken = () => {
+  const { accessToken } = localStorage;
+  if (!accessToken) return;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
 };
+enhanceAccessToeken();
+
+// const state = {
+//   isUser: false,
+// };
 
 export default new Vuex.Store({
-  state,
+  state:{
+    accessToken: null
+  },
   mutations,
   getters,
   actions,
