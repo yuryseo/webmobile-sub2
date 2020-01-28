@@ -14,6 +14,7 @@ package com.pet.sns.model.dto;
 	);*/
 public class Post {
 
+	private int pnum;
 	private int unum;
 	private String title;
 	private String img;
@@ -24,10 +25,26 @@ public class Post {
 	private String date;
 	private String privacy;
 
-	public Post(int unum) {
+	public Post(int pnum, int unum) {
+		this.pnum = pnum;
 		this.unum = unum;
 	}
-	
+
+	public Post(int pnum, String privacy) {
+		super();
+		this.pnum = pnum;
+		this.privacy = privacy;
+	}
+
+	public Post(int pnum, String title, String img, String contents, String privacy) {
+		super();
+		this.pnum = pnum;
+		this.title = title;
+		this.img = img;
+		this.contents = contents;
+		this.privacy = privacy;
+	}
+
 	public Post(int unum, String title, String img, String contents, String date, String privacy) {
 		super();
 		this.unum = unum;
@@ -38,9 +55,10 @@ public class Post {
 		this.privacy = privacy;
 	}
 
-	public Post(int unum, String title, String img, String contents, int likes, int hits, int comments, String date,
-			String privacy) {
+	public Post(int pnum, int unum, String title, String img, String contents, int likes, int hits, int comments,
+			String date, String privacy) {
 		super();
+		this.pnum = pnum;
 		this.unum = unum;
 		this.title = title;
 		this.img = img;
@@ -50,6 +68,11 @@ public class Post {
 		this.comments = comments;
 		this.date = date;
 		this.privacy = privacy;
+	}
+	
+
+	public int getPnum() {
+		return pnum;
 	}
 
 	public int getUnum() {
@@ -122,6 +145,12 @@ public class Post {
 
 	public void setPrivacy(String privacy) {
 		this.privacy = privacy;
+	}
+
+	@Override
+	public String toString() {
+		return "Post [unum=" + unum + ", title=" + title + ", img=" + img + ", contents=" + contents + ", likes="
+				+ likes + ", hits=" + hits + ", comments=" + comments + ", date=" + date + ", privacy=" + privacy + "]";
 	}
 
 }
