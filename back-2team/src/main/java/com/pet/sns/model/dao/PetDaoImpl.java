@@ -14,6 +14,12 @@ public class PetDaoImpl implements PetDao{
 	@Autowired
 	SqlSession session;
 
+	
+	@Override
+	public List<Pet> testAll() {
+		return session.selectList("pet.testAll");
+	}
+	
 	@Override
 	public List<Pet> selectAll(String unum) {
 		return session.selectList("pet.selectAll", unum);
@@ -39,4 +45,6 @@ public class PetDaoImpl implements PetDao{
 	public void delete(String petnum) {
 		session.delete("pet.delete", petnum);
 	}
+
+	
 }

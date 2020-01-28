@@ -25,6 +25,12 @@ public class PetRestController {
 	@Autowired
 	PetService pservice;
 	
+	@RequestMapping(value = "/petall/test", method = RequestMethod.GET)
+	@ApiOperation("frontend가 모든 DB정보를 볼 수 있는 test")
+	public List<Pet> testAll() {
+		return pservice.testAll();
+	}
+	
 	@RequestMapping(value = "/petall/{unum}", method = RequestMethod.GET)
 	@ApiOperation("회원의 모든 소유 펫 검색")
 	public List<Pet> selectAll(@PathVariable String unum) {

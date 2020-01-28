@@ -1,6 +1,7 @@
 package com.pet.sns.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,10 @@ import io.swagger.annotations.ApiOperation;
 public class UserRestController {
 	@Autowired
 	UserService uservice;
-	@RequestMapping(value = "/ua", method = RequestMethod.GET)
-	public void test() {
-		System.out.println("OK");
+	@RequestMapping(value = "/user/test", method = RequestMethod.GET)
+	@ApiOperation("Frontend용 모든 DB를 볼 수 있는 test")
+	public List<User> testAll() {
+		return uservice.testAll();
 	}
 	
 	@RequestMapping(value = "/user/{unum}", method = RequestMethod.GET)

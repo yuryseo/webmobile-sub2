@@ -15,6 +15,10 @@ public class PetServiceImpl implements PetService{
 	private PetDao petdao;
 
 	@Override
+	public List<Pet> testAll() {
+		return petdao.testAll();
+	}
+	@Override
 	public List<Pet> selectAll(String unum) {
 		return petdao.selectAll(unum);
 	}
@@ -38,5 +42,7 @@ public class PetServiceImpl implements PetService{
 	public void delete(String petnum) {
 		petdao.delete(petnum);
 	}
+
+	
 
 }
