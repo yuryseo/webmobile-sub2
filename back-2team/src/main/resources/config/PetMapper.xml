@@ -4,6 +4,10 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="pet">
+	<!-- Frontend가 보기 위한 모든 DB정보 -->
+	<select id="testAll" resultType="pet">
+		select * from pet
+	</select>
 	<!-- 유저 번호로 소유한 동물 출력 -->
 	<select id="selectAll" parameterType="java.lang.String"
 		resultType="pet">
@@ -16,13 +20,13 @@
 	</select>
 	<!-- 새로운 동물 등록 -->
 	<insert id="insert" parameterType="pet">
-		insert into pet(unum,name,animal,gender,breed,age,firstday,img)
-		values(#{unum},#{name},#{animal},#{gender},#{breed},#{age},#{firstday},#{img})
+		insert into pet(unum,name,animal,gender,breed,age,firstday,img,intro)
+		values(#{unum},#{name},#{animal},#{gender},#{breed},#{age},#{firstday},#{img},#{intro})
 	</insert>
 	<!-- 동물 정보 수정 -->
 	<update id="update" parameterType="pet">
 		update pet set
-		unum=#{unum},name=#{name},animal=#{animal},gender=#{gender},breed=#{breed},age=#{age},firstday=#{firstday},img=#{img}
+		unum=#{unum},name=#{name},animal=#{animal},gender=#{gender},breed=#{breed},age=#{age},firstday=#{firstday},img=#{img},intro=#{intro}
 		where petnum= #{petnum}
 	</update>
 	<!-- 동물 삭제 -->
