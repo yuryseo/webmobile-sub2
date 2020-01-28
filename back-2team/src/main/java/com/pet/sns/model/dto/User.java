@@ -5,6 +5,7 @@ public class User {
 	private String password;
 	private String nickname;
 	private String phone;
+	private String interest;
 
 	public User() {
 	}
@@ -14,11 +15,12 @@ public class User {
 		this.password = password;
 	}
 
-	public User(String email, String password, String nickname, String phone) {
+	public User(String email, String password, String nickname, String phone, String interest) {
 		this.email = email;
 		this.password = password;
 		this.nickname = nickname;
 		this.phone = phone;
+		this.interest = interest;
 	}
 
 	public String getEmail() {
@@ -52,5 +54,15 @@ public class User {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
+	public String getInterest() {
+		return interest;
+	}
+
+	public void setInterest(String interest) {
+		this.interest = interest;
+	}
+	
+	
 
 }

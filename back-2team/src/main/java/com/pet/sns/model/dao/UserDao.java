@@ -1,8 +1,8 @@
-package com.pet.sns.service;
+package com.pet.sns.model.dao;
 
 import com.pet.sns.model.dto.User;
 
-public interface UserService {
+public interface UserDao {
 	public User selectOne(String unum);
 	public void insert(User u);
 	public void updatePassword(User u);

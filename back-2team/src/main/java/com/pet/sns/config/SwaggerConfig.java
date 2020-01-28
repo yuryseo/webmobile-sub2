@@ -1,9 +1,7 @@
 package com.pet.sns.config;
 
-import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -22,9 +20,9 @@ public class SwaggerConfig {
         		.apiInfo(info()) // 스웨거에 표시할 정보
         		.select()
                 .apis(RequestHandlerSelectors.
-                        basePackage("com.web.curation.controller.account"))
+                        basePackage("com.web.sns.controller.user"))
                 //apis package는 controller 위치
-                .paths(PathSelectors.ant("/account/**"))
+                .paths(PathSelectors.ant("/user/**"))
                 //path : Controller에 @PostMapping("/account/**")이라고 되어있으닊깐
                 .build();
     }
