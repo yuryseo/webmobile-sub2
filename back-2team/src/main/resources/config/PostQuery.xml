@@ -44,7 +44,12 @@
 	<delete id="delete" parameterType="int">
 		delete from post where pnum = #{pnum}
 	</delete>
-
+	
+	<update id ="hitup" parameterType="int">
+	update post set hit = hit+1
+	where pnum = #{pnum}
+	
+	</update>
 </mapper>
 
 

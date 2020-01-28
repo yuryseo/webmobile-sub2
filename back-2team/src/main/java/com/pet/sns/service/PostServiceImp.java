@@ -107,4 +107,22 @@ public class PostServiceImp implements PostService {
 
 	}
 
+	@Override
+	public void hitup(int num) {
+		try {
+
+			System.out.println("Post hit up.......... "+num);
+			Post find = dao.selectone(num);
+			if(find==null) {
+				throw new InfoNotFoundException("게시물 조회수 추가 중 오류발생");
+			}else {
+			dao.hitup(num);
+			System.out.println("Post hit up success");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new PetsnsException("Post hit up 중 오류 발생");
+		}
+	}
+
 }

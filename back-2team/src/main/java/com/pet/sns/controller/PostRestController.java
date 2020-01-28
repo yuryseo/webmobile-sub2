@@ -75,6 +75,7 @@ public class PostRestController {
 	@PostMapping("post/insert")
 	@ApiOperation("게시물 등록")
 	public ResponseEntity<Map<String, Object>> insert(@RequestBody Post post){
+		//해시태그 테이블에 넣어주는거 필요
 		System.out.println("post insert...........");
 		postservice.insert(post);
 		return handleSuccess("게시물 등록 완료");

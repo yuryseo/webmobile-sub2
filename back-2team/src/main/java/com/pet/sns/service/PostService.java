@@ -18,5 +18,6 @@ public interface PostService {
 	public void update(Post post);
 
 	public void delete(int num);
-
+	
+	public void hitup(int num);
 }
