@@ -12,7 +12,9 @@
                </div>
 
             <div class="box">
+                <router-link v-bind:to="{name:'Postdetail'}">
                 <img src="../../images/mainpage/img1.png">
+                </router-link>
                 <h2></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                Vero, itaque illum! Unde recusandae a istedeserunt rem maiores
