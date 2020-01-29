@@ -21,6 +21,11 @@ public class UserServiceImp implements UserService{
 	}
 
 	@Override
+	public User loginCheck(User u) {
+		return udao.loginCheck(u);
+	}
+	
+	@Override
 	public User selectOne(String unum) {
 		return udao.selectOne(unum);
 	}
@@ -34,11 +39,23 @@ public class UserServiceImp implements UserService{
 	public void updatePassword(User u) {
 		udao.updatePassword(u);
 	}
+	@Override
+	public void updateInterest(User u) {
+		udao.updateInterest(u);
+	}
 
 	@Override
 	public void delete(String unum) {
 		udao.delete(unum);
 	}
+
+	@Override
+	public String selectEmail(String email) {
+		return udao.selectEmail(email);
+	}
+
+	
+
 
 	
 }
