@@ -1,0 +1,114 @@
+.post_box {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+.post {
+    float: left;
+    /* display: inline-block;
+    vertical-align: top; */
+    padding: 5%;
+}
+
+.photo_box {
+    width: 40%;
+    height: 450px;
+    background-color: rgb(248, 201, 209);
+}
+
+.post_photo {
+    max-width: 800px;
+}
+
+.text_box {
+    width: 40%;
+    height: 450px;
+    background-color: rgb(240, 231, 156);
+}
+
+.profile {
+    height: 60px;
+    background-color: red;
+}
+
+.profile_photo {
+    float: left;
+}
+
+.profile_photo_circle {
+    height: 50px;
+}
+
+.profile_name {
+    
+}
+
+.posting {
+    height: 240px;
+    background-color: palevioletred;
+}
+
+.post_content {
+    background-color: orange;
+}
+
+.hashtags {
+    background: green;
+}
+
+.like_comment {
+    position: relative;
+    height: 55px;
+    background-color: white;
+}
+
+.like {
+    float: left;
+    width: 60px;
+}
+
+.like_button {
+    width: 40px;
+    height: auto;
+}
+
+.comment {
+    float: left;
+    width: 60px;
+}
+
+.comment_button {
+    width: 40px;
+    height: auto;
+}
+
+.likenum {
+    position:absolute; 
+    bottom:0px;
+}
+
+.post_time {
+    background-color: aqua;
+}
+
+.comment_box {
+    background: blue;
+}
+
+.user_info {
+    float: left;
+}
+
+.user_names {
+    float : left;
+}
+
+.user_photos {
+    float: left;
+}
+
+.user_comments {
+    float: left;
+}
