@@ -1,22 +1,37 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import getters from './getters';
-import actions from './actions';
-import mutations from './mutations';
-import Constant from './Constant';
+import axios from './axios-common';
 
 Vue.use(Vuex);
 
-const state = {
-  isUser: false,
-  userlist: [],
-  petlist: []
-};
+// const state = {
+//   isUser: false,
+//   userlist: [],
+//   petlist: []
+// };
 
 
-export default new Vuex.Store({
-  state,
-  mutations,
-  getters,
-  actions,
+const store = new Vuex.Store({
+  state: {
+    petlist: {},
+  },
+  mutations: {
+    getPetOneDetail(state, payload) {
+      state.petlist = payload.petlist;
+    },
+  },
+  actions: {
+    petOneDetail: () => {
+      axios
+        .get('/petone/1')
+        .then((response) => {
+          store.commit('getPetOneDetail', { petlist: response.data });
+        })
+        .catch(() => {
+        });
+    },
+  },
 });
+
+
+export default store;

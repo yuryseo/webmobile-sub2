@@ -1,5 +1,3 @@
 export default {
-    getPetonelist: function(state){
-        return state.petlist;
-    }
+  getPetonelist: state => state.petlist,
 };

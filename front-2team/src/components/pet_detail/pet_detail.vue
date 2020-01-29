@@ -58,16 +58,27 @@
 import './pet_detail.css';
 
 export default {
-  components: {
-
+//   data: () => ({
+//       return: {
+//           age:"",
+//           animal: "",
+//           breed: "",
+//           firstday: "",
+//           gender: "",
+//           img: "",
+//           intro: "",
+//           name: "",
+//           petnum: "",
+//           unum: ""
+//       }
+//   }),
+  created() {
+    this.$store.dispatch('petOneDetail');
   },
-  data: () => ({
-
-  }),
   computed: {
-      petlist() {
-          return this.$store.getters.getPetonelist;
-      }
-  }
+    petlist() {
+      return this.$store.state.petlist;
+    },
+  },
 };
 </script>
