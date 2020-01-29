@@ -6,6 +6,7 @@ import petdetail from '../views/pet_detail.vue';
 
 Vue.use(Router);
 
+
 export default [
   {
     path: '/',
