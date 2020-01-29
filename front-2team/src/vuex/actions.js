@@ -1,3 +1,5 @@
+<script src="/store.js"><script>
+  
 export default {
     LOGIN({ commit }, { email, password }) {
         return axios
