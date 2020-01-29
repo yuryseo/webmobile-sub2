@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pet.sns.model.dto.Result;
 import com.pet.sns.model.dto.User;
+import com.pet.sns.service.JwtService;
+//import com.pet.sns.service.JwtService;
 import com.pet.sns.service.UserService;
 
 import io.swagger.annotations.Api;
@@ -24,6 +29,9 @@ import io.swagger.annotations.ApiOperation;
 public class UserRestController {
 	@Autowired
 	UserService uservice;
+	@Autowired
+    private JwtService jwtService;
+	
 	@RequestMapping(value = "/user/test", method = RequestMethod.GET)
 	@ApiOperation("Frontend용 모든 DB를 볼 수 있는 test")
 	public List<User> testAll() {
@@ -32,14 +40,20 @@ public class UserRestController {
 	
 	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
 	@ApiOperation("email과 password 입력으로 로그인 체크")
-	public boolean loginCheck(@RequestBody User u) {
-		User temp = uservice.loginCheck(u);
-		if(temp==null) {
-			return false;
-		}else {
-			return true;
+	public Result signin(@RequestBody User u, HttpServletResponse response){
+		Result result = null;
+		User loginMember = uservice.loginCheck(u);
+		if(loginMember!=null) {
+			result = Result.successInstance();
+			String token = jwtService.create(loginMember.getUnum(), loginMember, loginMember.getNickname());
+			response.setHeader("Authorization", token);
+			result.setData(loginMember);
+			System.out.println(token);
+			jwtService.get("25");
+			return result;
 		}
-	}
+		return result;
+    }
 	
 	@RequestMapping(value = "/user/{unum}", method = RequestMethod.GET)
 	@ApiOperation("unum으로 회원정보 검색")
