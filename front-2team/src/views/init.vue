@@ -1,11 +1,5 @@
 <template>
-    <div>
-        <a href="/#login" @click.prevent="show">Login</a>
-        <modal name="modal-login">
-            <modal-login v-if="page" @change="toggle"/>
-            <join-us v-else/>
-        </modal>
-    </div>
+    <ModalLogin/>
 </template>
 
 <script>

@@ -3,10 +3,12 @@ import Vuex from 'vuex';
 import getters from './getters';
 import actions from './actions';
 import mutations from './mutations';
+import axios from "axios"
 
 Vue.use(Vuex);
 
 const resourceHost = "http://70.12.247.104:9090"
+
 
 const enhanceAccessToeken = () => {
   const { accessToken } = localStorage;
@@ -15,9 +17,9 @@ const enhanceAccessToeken = () => {
 };
 enhanceAccessToeken();
 
-// const state = {
-//   isUser: false,
-// };
+const state = {
+   isUser: false,
+ };
 
 export default new Vuex.Store({
   state:{
