@@ -6,6 +6,9 @@ public class Post_Tag {
 	private Post post;
 	private List<String> tags;
 
+	public Post_Tag() {
+	}
+
 	public Post_Tag(Post post, List<String> tags) {
 		super();
 		this.post = post;

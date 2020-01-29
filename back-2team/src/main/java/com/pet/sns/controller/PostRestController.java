@@ -77,29 +77,34 @@ public class PostRestController {
 		return handleSuccess(find);
 
 	}
-
 	@PostMapping("post/insert")
 	@ApiOperation("게시물 등록")
-	public ResponseEntity<Map<String, Object>> insert(@RequestBody Post_Tag pt) {
+	public ResponseEntity<Map<String, Object>> insert(@RequestBody Post post) {
 		// 해시태그 테이블에 넣어주는거 필요
-		System.out.println("post insert...........");
-		Post post = pt.getPost();
-		int pnum = post.getPnum();
-		List<String> tags = pt.getTags();
+		System.out.println("post insert..........."+post);
+		
 		System.out.println("unum..........." + post.getUnum());
 		postservice.insert(post);
-		if (!tags.isEmpty()) {
-			System.out.println("tags 배열"+tags);
-			for (int i = 0; i < tags.size(); i++) {
-				postservice.inserttag(tags.get(i));
-				int tnum = postservice.selecttnum(tags.get(i));
-				
-				postservice.posttag(new Tag(pnum,tnum));
-			}
-		}
 		
 		return handleSuccess("게시물 등록 완료");
 	}
+	/*
+	 * @PostMapping("post/insert")
+	 * 
+	 * @ApiOperation("게시물 등록") public ResponseEntity<Map<String, Object>>
+	 * insert(@RequestBody Post_Tag pt) { // 해시태그 테이블에 넣어주는거 필요
+	 * System.out.println("post insert..........."+pt); Post post = pt.getPost();
+	 * int pnum = post.getPnum(); List<String> tags = pt.getTags();
+	 * System.out.println("unum..........." + post.getUnum());
+	 * postservice.insert(post); if (!tags.isEmpty()) {
+	 * System.out.println("tags 배열"+tags); for (int i = 0; i < tags.size(); i++) {
+	 * postservice.inserttag(tags.get(i)); int tnum =
+	 * postservice.selecttnum(tags.get(i));
+	 * 
+	 * postservice.posttag(new Tag(pnum,tnum)); } }
+	 * 
+	 * return handleSuccess("게시물 등록 완료"); }
+	 */
 
 	@PutMapping("post/update")
 	@ApiOperation("게시물 수정")
@@ -110,7 +115,7 @@ public class PostRestController {
 		return handleSuccess("게시물 수정 완료");
 	}
 
-	@PutMapping("post/hitup")
+	@PutMapping("post/hitup/{num}")
 	@ApiOperation("게시물 조회수 증가")
 	public ResponseEntity<Map<String, Object>> hitup(@PathVariable int num) {
 		System.out.println("post hitup...........");

@@ -25,32 +25,28 @@ public class Post {
 	private String date;
 	private String privacy;
 
+	public Post() {}
+
 	public Post(int pnum, int unum) {
 		this.pnum = pnum;
 		this.unum = unum;
 	}
 
-	public Post(int pnum, String privacy) {
-		super();
-		this.pnum = pnum;
-		this.privacy = privacy;
-	}
-
-	public Post(int pnum, String title, String img, String contents, String privacy) {
-		super();
-		this.pnum = pnum;
-		this.title = title;
-		this.img = img;
-		this.contents = contents;
-		this.privacy = privacy;
-	}
-
-	public Post(int unum, String title, String img, String contents, String date, String privacy) {
-		super();
+	public Post(int unum, String title, String img, int comments, String date, String privacy) {
 		this.unum = unum;
 		this.title = title;
 		this.img = img;
-		this.contents = contents;
+		this.comments = comments;
+		this.date = date;
+		this.privacy = privacy;
+	}
+
+	public Post(int pnum, int unum, String title, String img, int comments, String date, String privacy) {
+		this.pnum = pnum;
+		this.unum = unum;
+		this.title = title;
+		this.img = img;
+		this.comments = comments;
 		this.date = date;
 		this.privacy = privacy;
 	}
@@ -69,7 +65,6 @@ public class Post {
 		this.date = date;
 		this.privacy = privacy;
 	}
-	
 
 	public int getPnum() {
 		return pnum;

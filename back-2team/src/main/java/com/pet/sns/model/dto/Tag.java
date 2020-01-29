@@ -7,14 +7,15 @@ public class Tag {
 	private int tnum;
 	private List<String> word;
 
+	public Tag() {
+	}
+
 	public Tag(int pnum, int tnum) {
-		super();
 		this.pnum = pnum;
 		this.tnum = tnum;
 	}
 
 	public Tag(int tnum, List<String> word) {
-		super();
 		this.tnum = tnum;
 		this.word = word;
 	}
