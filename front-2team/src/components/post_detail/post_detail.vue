@@ -1,4 +1,5 @@
 <template>
+<div class="wrap">
   <div class="post_box">
     <section class="post photo_box">
       <img class="post_photo" src="../../assets/post_detail/chiva.png" alt="">
@@ -26,24 +27,25 @@
         <div class="likenum">좋아요 3개</div>
       </div>
 
-      <section class="post_time">포스팅시각</section>
+      <div class="post_time">포스팅시각</div>
 
       <div class="comment_box">
         <div class="user_info">
-          <div class="user_photos">댓글 단 사람의 사진</div>
-          <div class="user_names">댓글 단 사람의 이름</div>
-          <div class="user_comments">댓글 내용</div>
+          <div class="user_photos">댓글러프사</div>
+          <div class="user_names">댓글러이름</div>
         </div>
+          <div class="user_comments">댓글내용</div>
       </div>
 
       <div class="comment_write_box">
         <div class="comment_write">
           <div class="comment_writing">댓글 달기</div>
-          <button class="comment_writing_button">댓글 입력</button>
         </div>
+        <i class="far fa-smile fa-2x"></i>
       </div>
     </section>
   </div>
+</div>
 </template>
 
 <script>

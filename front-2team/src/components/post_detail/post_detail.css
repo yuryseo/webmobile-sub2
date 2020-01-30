@@ -1,3 +1,13 @@
+#wrap {
+    width: 1000px;
+    height: 900px;
+    margin: 0 auto;
+    font-size: 20px;
+    /* color: #fff; */
+    text-align: center;
+    text-transform: uppercase;
+}
+
 .post_box {
     max-width: 1200px;
     margin: 0 auto;
@@ -15,7 +25,7 @@
 .photo_box {
     width: 40%;
     height: 450px;
-    background-color: rgb(248, 201, 209);
+    background-color: rgba(209, 29, 128, 0.137);
 }
 
 .post_photo {
@@ -25,37 +35,37 @@
 .text_box {
     width: 40%;
     height: 450px;
-    background-color: rgb(240, 231, 156);
+    background-color: rgba(209, 29, 128, 0.096);
 }
 
 .profile {
-    height: 60px;
-    background-color: red;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgba(209, 29, 128, 0);
 }
 
 .profile_photo {
+    height: 50px;
+    line-height: 50px;
     float: left;
 }
 
 .profile_photo_circle {
-    height: 50px;
-}
-
-.profile_name {
-    
+    height: 48px;
+    width: 48px;
 }
 
 .posting {
     height: 240px;
-    background-color: palevioletred;
+    background-color:rgba(177, 19, 106, 0.158);
 }
 
 .post_content {
-    background-color: orange;
+    background-color: rgba(247, 125, 55, 0.432);
 }
 
 .hashtags {
-    background: green;
+    background: rgba(167, 89, 45, 0.637);
 }
 
 .like_comment {
@@ -94,7 +104,8 @@
 }
 
 .comment_box {
-    background: blue;
+    float: left;
+    background-color: blue;
 }
 
 .user_info {
@@ -111,4 +122,21 @@
 
 .user_comments {
     float: left;
+}
+
+.comment_write_box {
+    clear: both;
+    background-color: peru;
+}
+
+.comment_write {
+    float: left;
+    height: 32px;
+    /* width: 305px; */
+    line-height: 32px;
+    background-color: brown;
+}
+
+.fa {
+    vertical-align: middle;
 }
