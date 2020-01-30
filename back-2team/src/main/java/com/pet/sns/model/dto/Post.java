@@ -25,32 +25,29 @@ public class Post {
 	private String date;
 	private String privacy;
 
+	public Post() {
+	}
+
 	public Post(int pnum, int unum) {
 		this.pnum = pnum;
 		this.unum = unum;
 	}
 
-	public Post(int pnum, String privacy) {
-		super();
-		this.pnum = pnum;
-		this.privacy = privacy;
-	}
-
-	public Post(int pnum, String title, String img, String contents, String privacy) {
-		super();
-		this.pnum = pnum;
-		this.title = title;
-		this.img = img;
-		this.contents = contents;
-		this.privacy = privacy;
-	}
-
-	public Post(int unum, String title, String img, String contents, String date, String privacy) {
-		super();
+	public Post(int unum, String title, String img, int comments, String date, String privacy) {
 		this.unum = unum;
 		this.title = title;
 		this.img = img;
-		this.contents = contents;
+		this.comments = comments;
+		this.date = date;
+		this.privacy = privacy;
+	}
+
+	public Post(int pnum, int unum, String title, String img, int comments, String date, String privacy) {
+		this.pnum = pnum;
+		this.unum = unum;
+		this.title = title;
+		this.img = img;
+		this.comments = comments;
 		this.date = date;
 		this.privacy = privacy;
 	}
@@ -69,10 +66,13 @@ public class Post {
 		this.date = date;
 		this.privacy = privacy;
 	}
-	
 
 	public int getPnum() {
 		return pnum;
+	}
+
+	public void setPnum(int pnum) {
+		this.pnum = pnum;
 	}
 
 	public int getUnum() {
@@ -149,8 +149,9 @@ public class Post {
 
 	@Override
 	public String toString() {
-		return "Post [unum=" + unum + ", title=" + title + ", img=" + img + ", contents=" + contents + ", likes="
-				+ likes + ", hits=" + hits + ", comments=" + comments + ", date=" + date + ", privacy=" + privacy + "]";
+		return "Post [pnum=" + pnum + ", unum=" + unum + ", title=" + title + ", img=" + img + ", contents=" + contents
+				+ ", likes=" + likes + ", hits=" + hits + ", comments=" + comments + ", date=" + date + ", privacy="
+				+ privacy + "]";
 	}
 
 }

@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Router from "vue-router";
+import Vue from 'vue';
+import Router from 'vue-router';
 import init from '../views/init.vue';
 import Mainpage from '../views/mainpage.vue';
 import petdetail from '../views/pet_detail.vue';

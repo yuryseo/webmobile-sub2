@@ -9,16 +9,28 @@
     select * from user
   </select>
 	
+  <select id="loginCheck" parameterType="user" resultType="user">
+    select * from user where email = #{email} and password = #{password};
+  </select>
+
   <select id="selectOne" parameterType="java.lang.String" resultType="user">
     select * from user where unum = #{unum}
   </select>
+
+  <select id="selectEmail" parameterType="java.lang.String" resultType="java.lang.String">
+   select email from user where email = #{email}
+  </select>
   
   <insert id="insert" parameterType="user">
-  	insert into user(email,password,nickname,phone, interest) values(#{email},#{password},#{nickname},#{phone},#{interest})
+  	insert into user(email,password,nickname,phone) values(#{email},#{password},#{nickname},#{phone})
   </insert>
 
   <update id="updatepassword" parameterType="user">
   	update user set password = #{password} where unum = #{unum}
+  </update>
+
+  <update id="updateinterest" parameterType="user">
+  	update user set interest = #{interest} where unum = #{unum}
   </update>
 
   <delete id="delete" parameterType="java.lang.String">

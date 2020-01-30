@@ -5,16 +5,19 @@ import java.util.List;
 public class Tag {
 	private int pnum;
 	private int tnum;
+	private int postnum;
+	private int tagnum;
 	private List<String> word;
 
-	public Tag(int pnum, int tnum) {
-		super();
-		this.pnum = pnum;
-		this.tnum = tnum;
+	public Tag() {
+	}
+
+	public Tag(int postnum, int tagnum) {
+		this.postnum = postnum;
+		this.tagnum = tagnum;
 	}
 
 	public Tag(int tnum, List<String> word) {
-		super();
 		this.tnum = tnum;
 		this.word = word;
 	}
@@ -41,6 +44,22 @@ public class Tag {
 
 	public void setPnum(int pnum) {
 		this.pnum = pnum;
+	}
+
+	public int getPostnum() {
+		return postnum;
+	}
+
+	public void setPostnum(int postnum) {
+		this.postnum = postnum;
+	}
+
+	public int getTagnum() {
+		return tagnum;
+	}
+
+	public void setTagnum(int tagnum) {
+		this.tagnum = tagnum;
 	}
 
 	@Override
