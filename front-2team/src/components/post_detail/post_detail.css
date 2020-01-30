@@ -4,8 +4,8 @@
     margin: 0 auto;
     font-size: 20px;
     /* color: #fff; */
-    text-align: center;
-    text-transform: uppercase;
+    /* text-align: center; */
+    /* text-transform: uppercase; */
 }
 
 .post_box {
@@ -131,9 +131,9 @@
 
 .comment_write {
     float: left;
-    height: 32px;
+    height: 40px;
     /* width: 305px; */
-    line-height: 32px;
+    line-height: 40px;
     background-color: brown;
 }
 

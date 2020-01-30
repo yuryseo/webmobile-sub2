@@ -1,5 +1,5 @@
 <template>
-<div class="wrap">
+<div id="wrap">
   <div class="post_box">
     <section class="post photo_box">
       <img class="post_photo" src="../../assets/post_detail/chiva.png" alt="">
