@@ -49,6 +49,24 @@ public class UserRestController {
 		}
 	}
 	
+	@RequestMapping(value = "/signin", method = RequestMethod.POST)
+	@ApiOperation("email과 password 입력으로 로그인 체크")
+    public Result signin(@RequestBody User u, HttpServletResponse response){
+    	Result result = Result.successInstance();
+        User user = uservice.loginCheck(u);
+        String token = jwtService.create(user.getUnum(),user,user.getNickname());
+        response.setHeader("Authorization", token);
+        result.setData(user);
+        return result;
+    }
+	
+	@RequestMapping(value = "/tokentest/{token}", method = RequestMethod.GET)
+	@ApiOperation("토큰이 옳은지 검증")
+	public void tokenTest(@PathVariable String token) {
+		System.out.println(token);
+		jwtService.isUsable(token);
+	}
+	
 	@RequestMapping(value = "/user/{unum}", method = RequestMethod.GET)
 	@ApiOperation("unum으로 회원정보 검색")
 	public User selectOne(@PathVariable String unum) {

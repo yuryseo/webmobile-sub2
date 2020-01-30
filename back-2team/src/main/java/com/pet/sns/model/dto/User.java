@@ -8,6 +8,12 @@ public class User {
 	private String phone;
 	private String interest;
 
+	@Override
+	public String toString() {
+		return "User [unum=" + unum + ", email=" + email + ", password=" + password + ", nickname=" + nickname
+				+ ", phone=" + phone + ", interest=" + interest + "]";
+	}
+
 	public User() {
 	}
 
