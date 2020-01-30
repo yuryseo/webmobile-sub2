@@ -20,6 +20,11 @@ public class UserDaoImpl implements UserDao{
 	}
 	
 	@Override
+	public User loginCheck(User u) {
+		return session.selectOne("user.loginCheck",u);
+	}	
+	
+	@Override
 	public User selectOne(String unum) {
 		return session.selectOne("user.selectOne",unum);
 	}
@@ -35,12 +40,19 @@ public class UserDaoImpl implements UserDao{
 	}
 
 	@Override
+	public void updateInterest(User u) {
+		session.update("user.updateinterest", u);
+	}
+
+	@Override
 	public void delete(String unum) {
 		session.delete("user.delete",unum);
 	}
 
-	
-	
-	
+	@Override
+	public String selectEmail(String email) {
+		return session.selectOne("user.selectEmail", email);
+	}
+
 	
 }
