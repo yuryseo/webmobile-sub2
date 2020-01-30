@@ -1,4 +1,5 @@
 export default {
+<<<<<<< HEAD
     LOGIN({ commit }, { email, password }) {
         return axios
           .post(`${resourceHost}/login`, { email, password })
@@ -13,4 +14,7 @@ export default {
         axios.defaults.headers.common["Authorization"] = undefined;
         commit("LOGOUT");
       }
+=======
+ 
+>>>>>>> refs/remotes/origin/front_detail
 };

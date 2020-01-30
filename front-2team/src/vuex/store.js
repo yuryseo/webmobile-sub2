@@ -1,29 +1,46 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import getters from './getters';
-import actions from './actions';
-import mutations from './mutations';
+import axios from './axios-common';
 
 Vue.use(Vuex);
 
-const resourceHost = "http://70.12.247.104:9090"
-
-const enhanceAccessToeken = () => {
-  const { accessToken } = localStorage;
-  if (!accessToken) return;
-  axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-};
-enhanceAccessToeken();
-
-// const state = {
-//   isUser: false,
-// };
-
-export default new Vuex.Store({
-  state:{
-    accessToken: null
+const store = new Vuex.Store({
+  state: {
+    petlist: {},
+    postlist: {},
   },
-  mutations,
-  getters,
-  actions,
+  getters: {
+    EveryPostList: state => state.postlist,
+  },
+  mutations: {
+    getPetOneDetail(state, payload) {
+      state.petlist = payload.petlist;
+    },
+    mainPostFeed(state, payload) {
+      state.postlist = payload.postlist;
+    },
+  },
+  actions: {
+    petOneDetail: () => {
+      axios
+        .get('/petone/1')
+        .then((response) => {
+          store.commit('getPetOneDetail', { petlist: response.data });
+        })
+        .catch(() => {
+        });
+    },
+    mainPostFeed: () => {
+      axios
+        .get('/post/selectall')
+        .then((response) => {
+          store.commit('mainPostFeed', { postlist: response.data });
+        })
+        .catch(() => {
+        });
+    },
+  },
 });
+
+
+export default store;
