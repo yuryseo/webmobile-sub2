@@ -5,14 +5,15 @@ import Mainpage from '../views/mainpage.vue';
 import petdetail from '../views/pet_detail.vue';
 import postdetail from '../views/post_detail.vue';
 import postupload from '../views/post_upload.vue';
+import notice from '../views/notice.vue';
 
 Vue.use(Router);
 
 export default [
   {
     path: '/',
-    name: 'init',
-    component: init,
+    name: 'Mainpage',
+    component: Mainpage,
   },
   {
     path: '/main',
@@ -33,5 +34,10 @@ export default [
     path: '/postupload',
     name: 'Postupload',
     component: postupload,
-  }
+  },
+  {
+    path: '/notice',
+    name: 'Notice',
+    component: notice,
+  },
 ];

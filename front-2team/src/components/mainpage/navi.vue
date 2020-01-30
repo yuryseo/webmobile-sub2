@@ -12,8 +12,8 @@
             </div>
             <div class="menus">
                 <ul>
-                    <li><a href="#"><i class="fas fa-plus"></i>Upload</a></li>
-                    <li><a href="#"><i class="fas fa-paw"></i>Alarm</a></li>
+                    <li><a href="#/postupload"><i class="fas fa-plus"></i>Upload</a></li>
+                    <li><a href="#/notice"><i class="fas fa-paw"></i>Alarm</a></li>
                     <li><router-link v-bind:to="{name:'Petdetail'}">
                         <img src="../../images/mainpage/seolyugithub.png" width="80"
                                 height="80">MyPage
