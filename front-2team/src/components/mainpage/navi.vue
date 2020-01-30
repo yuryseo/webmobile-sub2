@@ -14,8 +14,11 @@
                 <ul>
                     <li><a href="#"><i class="fas fa-plus"></i>Upload</a></li>
                     <li><a href="#"><i class="fas fa-paw"></i>Alarm</a></li>
-                    <li><a href="#"><img src="../../images/mainpage/seolyugithub.png" width="80"
-                                height="80">MyPage</a></li>
+                    <li><router-link v-bind:to="{name:'Petdetail'}">
+                        <img src="../../images/mainpage/seolyugithub.png" width="80"
+                                height="80">MyPage
+                        </router-link>
+                    </li>
                 </ul>
             </div>
         </nav>

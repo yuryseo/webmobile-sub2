@@ -58,20 +58,6 @@
 import './pet_detail.css';
 
 export default {
-//   data: () => ({
-//       return: {
-//           age:"",
-//           animal: "",
-//           breed: "",
-//           firstday: "",
-//           gender: "",
-//           img: "",
-//           intro: "",
-//           name: "",
-//           petnum: "",
-//           unum: ""
-//       }
-//   }),
   created() {
     this.$store.dispatch('petOneDetail');
   },
