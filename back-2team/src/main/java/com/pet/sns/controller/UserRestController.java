@@ -40,20 +40,14 @@ public class UserRestController {
 	
 	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
 	@ApiOperation("email과 password 입력으로 로그인 체크")
-	public Result signin(@RequestBody User u, HttpServletResponse response){
-		Result result = null;
-		User loginMember = uservice.loginCheck(u);
-		if(loginMember!=null) {
-			result = Result.successInstance();
-			String token = jwtService.create(loginMember.getUnum(), loginMember, loginMember.getNickname());
-			response.setHeader("Authorization", token);
-			result.setData(loginMember);
-			System.out.println(token);
-			jwtService.get("25");
-			return result;
+	public boolean loginCheck(@RequestBody User u) {
+		User temp = uservice.loginCheck(u);
+		if(temp==null) {
+			return false;
+		}else {
+			return true;
 		}
-		return result;
-    }
+	}
 	
 	@RequestMapping(value = "/user/{unum}", method = RequestMethod.GET)
 	@ApiOperation("unum으로 회원정보 검색")
