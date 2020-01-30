@@ -2,7 +2,7 @@
 <div>
     <nav>
     <router-link v-bind:to="{name:'Mainpage'}">
-        <img src="../../images/mainpage/logo.png" width="170" height="80">
+        <img src="../../assets/mainpage/logo.png" width="170" height="80">
     </router-link>
             <div class="search-box">
                 <input class="search-txt" type="text" name="" placeholder="Type to search">

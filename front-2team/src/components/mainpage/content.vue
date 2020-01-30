@@ -4,7 +4,7 @@
             <!-- <div class="inner_box" v-if="postlist.privacy === 'all' "> -->
                 <h2>{{postlist.title}}</h2>
                 <router-link v-bind:to="{name:'Petdetail'}">
-                    <img src="../../images/mainpage/img1.png">
+                    <img src="../../assets/mainpage/img1.png">
                 </router-link>
                 <h2></h2>
                 <p>{{postlist.contents}}</p>
