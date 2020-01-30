@@ -18,4 +18,5 @@
   };
 </script>
 
+
 <style scoped src='../components/member/member.css'/>
