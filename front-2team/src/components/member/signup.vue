@@ -3,8 +3,8 @@
         <input type="radio" name="tabs" id="tab2"/>
         <label for="tab2">Join Us</label>
         <div id="tab-content2" class="tab-content">
-            <form @submit="formSubmit">
-                <input type="email" id="email" name="email" value="e-mail" v-model="name" placeholder="e-mail ID입력">
+            <form>
+                <input type="email" id="email" name="email" value="e-mail" v-model="email" placeholder="e-mail ID입력">
                 <input hidden id="interest" name="interest" value="interest" v-model="interest" placeholder="관심동물 입력">
                 <input hidden id="phone" name = "phone" value="phone" v-model="phone" placeholder="휴대폰 번호 입력">
                 <input hidden id="unum" name="unum" value="unum" v-model="unum"> <br/><br/>
@@ -33,3 +33,6 @@ export default {
     }
 }
 </script>
+
+<style scoped src='@/components/member/member.css'>
+</style>

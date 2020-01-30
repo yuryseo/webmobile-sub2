@@ -6,8 +6,8 @@ import petdetail from '../views/pet_detail.vue';
 
 Vue.use(Router);
 
-
-export default [
+export default 
+[
   {
     path: '/',
     name: 'member',
@@ -17,6 +17,7 @@ export default [
     path: '/main',
     name: 'Mainpage',
     component: Mainpage,
+
   },
   {
     path: '/petdetail',
