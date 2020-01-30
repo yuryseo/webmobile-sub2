@@ -33,4 +33,5 @@ export default {
 }
 </script>
 
-<style scoped src='./member.css'/>
+<!-- 회원가입 CSS import 방식 변경-->
+<style scoped src='./member.css'/> 
