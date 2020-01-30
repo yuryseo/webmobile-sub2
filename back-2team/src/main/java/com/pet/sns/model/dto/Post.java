@@ -25,7 +25,8 @@ public class Post {
 	private String date;
 	private String privacy;
 
-	public Post() {}
+	public Post() {
+	}
 
 	public Post(int pnum, int unum) {
 		this.pnum = pnum;
@@ -68,6 +69,10 @@ public class Post {
 
 	public int getPnum() {
 		return pnum;
+	}
+
+	public void setPnum(int pnum) {
+		this.pnum = pnum;
 	}
 
 	public int getUnum() {
@@ -144,8 +149,9 @@ public class Post {
 
 	@Override
 	public String toString() {
-		return "Post [unum=" + unum + ", title=" + title + ", img=" + img + ", contents=" + contents + ", likes="
-				+ likes + ", hits=" + hits + ", comments=" + comments + ", date=" + date + ", privacy=" + privacy + "]";
+		return "Post [pnum=" + pnum + ", unum=" + unum + ", title=" + title + ", img=" + img + ", contents=" + contents
+				+ ", likes=" + likes + ", hits=" + hits + ", comments=" + comments + ", date=" + date + ", privacy="
+				+ privacy + "]";
 	}
 
 }
