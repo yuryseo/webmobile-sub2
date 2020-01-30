@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from "vue-router";
-import init from '../views/init.vue';
+import member from '../views/member.vue';
 import Mainpage from '../views/mainpage.vue';
 import petdetail from '../views/pet_detail.vue';
 import postdetail from '../views/post_detail.vue';
@@ -8,16 +8,18 @@ import postupload from '../views/post_upload.vue';
 
 Vue.use(Router);
 
-export default [ 
+export default 
+[
   {
     path: '/',
-    name: 'init',
-    component: init,
+    name: 'member',
+    component: member,
   },
   {
     path: '/main',
     name: 'Mainpage',
     component: Mainpage,
+
   },
   {
     path: '/petdetail',
