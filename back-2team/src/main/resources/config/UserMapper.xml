@@ -4,7 +4,6 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 	<mapper namespace="user">
-	
 	<select id="testAll" resultType="user">
     select * from user
   </select>
@@ -12,7 +11,6 @@
   <select id="loginCheck" parameterType="user" resultType="user">
     select * from user where email = #{email} and password = #{password};
   </select>
-
   <select id="selectOne" parameterType="java.lang.String" resultType="user">
     select * from user where unum = #{unum}
   </select>
@@ -26,7 +24,7 @@
   </insert>
 
   <update id="updatepassword" parameterType="user">
-  	update user set password = #{password} where unum = #{unum}
+  	update user set password = #{password} where unum = #{unum};
   </update>
 
   <update id="updateinterest" parameterType="user">

@@ -1,7 +1,6 @@
 package com.pet.sns.model.dto;
 
 public class User {
-	private String unum;
 	private String email;
 	private String password;
 	private String nickname;
@@ -22,21 +21,12 @@ public class User {
 		this.password = password;
 	}
 
-	public User(String unum, String email, String password, String nickname, String phone, String interest) {
-		this.unum = unum;
+	public User(String email, String password, String nickname, String phone, String interest) {
 		this.email = email;
 		this.password = password;
 		this.nickname = nickname;
 		this.phone = phone;
 		this.interest = interest;
-	}
-
-	public String getUnum() {
-		return unum;
-	}
-
-	public void setUnum(String unum) {
-		this.unum = unum;
 	}
 
 	public String getEmail() {
@@ -78,5 +68,7 @@ public class User {
 	public void setInterest(String interest) {
 		this.interest = interest;
 	}
+	
+	
 
 }

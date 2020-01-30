@@ -1,46 +1,22 @@
 <template>
-        <div class="container">
-            <div class="box">
+    <div class="container">
+        <div class="box" v-for="postlist in postlists.data" :key="postlist.privacy">
+            <!-- <div class="inner_box" v-if="postlist.privacy === 'all' "> -->
+                <h2>{{postlist.title}}</h2>
                 <router-link v-bind:to="{name:'Petdetail'}">
-                    <img src="../../images/mainpage/img1.png">
+                    <img src="../../assets/mainpage/img1.png">
                 </router-link>
                 <h2></h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-               Vero, itaque illum! Unde recusandae a istedeserunt rem maiores
-                sed labore iusto repudiandae delectus explicabo fuga,
-               voluptatem laboriosameius numquam non.</p>
-               </div>
-
-            <div class="box">
-                <router-link v-bind:to="{name:'Postdetail'}">
-                <img src="../../images/mainpage/img1.png">
-                </router-link>
-                <h2></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-               Vero, itaque illum! Unde recusandae a istedeserunt rem maiores
-                sed labore iusto repudiandae delectus explicabo fuga,
-               voluptatem laboriosameius numquam non.</p>
-            </div>
-
-            <div class="box">
-                <img src="../../images/mainpage/img1.png">
-                <h2></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-               Vero, itaque illum! Unde recusandae a istedeserunt rem maiores
-                sed labore iusto repudiandae delectus explicabo fuga,
-               voluptatem laboriosameius numquam non.</p>
-            </div>
-
-            <div class="box">
-                <img src="../../images/mainpage/img1.png">
-                <h2></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-               Vero, itaque illum! Unde recusandae a istedeserunt rem maiores
-                sed labore iusto repudiandae delectus explicabo fuga,
-               voluptatem laboriosameius numquam non.</p>
-            </div>
+                <p>{{postlist.contents}}</p>
+                <div class="inner_box_bottom">
+                    <span class="date">{{postlist.date}}</span>
+                    <span class="likes">{{postlist.likes}}</span>
+                    <span class="comments">{{postlist.comments}}</span>
+                </div>
+            <!-- </div> -->
 
         </div>
+    </div>
 </template>
 
 <script>
@@ -48,8 +24,17 @@
 import './content.css';
 
 export default {
-  data: () => ({
-  }),
+  created() {
+    this.$store.dispatch('mainPostFeed');
+  },
+  computed: {
+    postlists() {
+      return this.$store.state.postlist;
+    },
+    everypostlist() {
+      return this.$store.getters.EveryPostList;
+    },
+  },
 };
 
 </script>
