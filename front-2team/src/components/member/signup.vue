@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import '@/components/member/member.css';
 export default {
     data() {
         return {
@@ -34,5 +33,4 @@ export default {
 }
 </script>
 
-<style scoped src='@/components/member/member.css'>
-</style>
+<style scoped src='./member.css'/>
