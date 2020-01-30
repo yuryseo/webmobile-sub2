@@ -8,7 +8,7 @@ import postupload from '../views/post_upload.vue';
 
 Vue.use(Router);
 
-export default [
+export default [ 
   {
     path: '/',
     name: 'init',
