@@ -35,6 +35,17 @@ public class PostServiceImp implements PostService {
 	}
 
 	@Override
+	public int selectpnum(Post post) {
+
+		try {
+			return dao.selectpnum(post);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new PetsnsException("Post selectpnum 오류 발생");
+		}
+	}
+
+	@Override
 	public List<Post> selectall() {
 
 		try {
@@ -42,7 +53,7 @@ public class PostServiceImp implements PostService {
 			List<Post> find = null;
 			System.out.println(find);
 			find = dao.selectall();
-			System.out.println("find"+find);
+			System.out.println("find" + find);
 			if (find == null) {
 				System.out.println("null");
 				return null;
@@ -135,12 +146,8 @@ public class PostServiceImp implements PostService {
 	@Override
 	public void inserttag(String word) {
 		try {
-			System.out.println("insert tag ");
-			int tnum = selecttnum(word);
-			System.out.println("select tnum........." + tnum);
-			if (tnum == -1) {// 해당 tag가 table에 없으면
-				dao.inserttag(word);
-			}
+			System.out.println("insert tag " + word);
+			dao.inserttag(word);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -151,12 +158,22 @@ public class PostServiceImp implements PostService {
 	}
 
 	@Override
-	public int selecttnum(String tag) {
+	public Integer selecttnum(String tag) {
 
 		try {
 			System.out.println("select num............");
-			int tnum = dao.selecttnum(tag);
-			if (tnum > 0) {
+			Integer tnum = -1;
+			tnum = dao.selecttnum(tag);
+			if (tnum == null) {
+				dao.inserttag(tag);
+				System.out.println("tnum 이 없을때");
+				tnum = dao.selecttnum(tag);
+				System.out.println(tnum);
+				return tnum;
+			} else {
+
+				System.out.println("tnum 이 있을때");
+				System.out.println(tnum);
 				return tnum;
 			}
 		} catch (Exception e) {

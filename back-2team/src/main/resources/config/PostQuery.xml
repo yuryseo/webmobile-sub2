@@ -5,6 +5,15 @@
 
 
 <mapper namespace="com.pet.sns.model.dao.PostDaoMgr">
+	
+	
+	<select id="selectpnum" parameterType="post" resultType="int">
+		select pnum
+		from post
+		where unum = #{unum}  and title = #{title}  and contents  = #{contents} 
+        order by date desc limit 1;
+	</select>
+	
 	<select id="selectone" parameterType="int" resultType="post">
 		select
 		pnum,unum,title,img,contents,likes,hits,comments,date,privacy
@@ -14,13 +23,13 @@
 	<select id="selectall" resultType="post">
 		select
 		pnum,unum,title,img,contents,likes,hits,comments,date,privacy
-		from post 
+		from post order by date desc 
 	</select>
 	<select id="selectmine" parameterType="int" resultType="post">
 		select
 		pnum,unum,title,img,contents,likes,hits,comments,date,privacy
 		from post
-		where unum = #{unum} 
+		where unum = #{unum}  order by date desc 
 	</select>
 
 	<insert id="insert" parameterType="post">
@@ -56,8 +65,8 @@
 		values (#{word}) 
 	</insert>
 
-	<select id="selecttnum" parameterType="string" resultType="int">
-		select tnum from tag where word = #{word} 
+	<select id="selecttnum" parameterType="string" resultType="Integer">
+		select tnum from tag where word = #{word}
 	</select>
 	<select id="selecttag" parameterType="int" resultType="string">
 		select
@@ -78,7 +87,7 @@
 	<!-- post_tag -->
 	<insert id="posttag" parameterType="tag">
 		insert into post_tag
-		(postnum, tagnum) values (#{pnum}, #{tnum}) 
+		(postnum, tagnum) values (#{postnum}, #{tagnum}) 
 	</insert>
 
 </mapper>

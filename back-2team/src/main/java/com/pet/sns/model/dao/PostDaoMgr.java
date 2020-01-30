@@ -9,6 +9,9 @@ import com.pet.sns.model.dto.Tag;
 
 @Mapper
 public interface PostDaoMgr {
+
+	public int selectpnum(Post post);
+
 	public Post selectone(int num);
 
 	public List<Post> selectall();
@@ -27,7 +30,7 @@ public interface PostDaoMgr {
 
 	public void inserttag(String tags);
 
-	public int selecttnum(String tag); // 해당 단어의 tnum return
+	public Integer selecttnum(String tag); // 해당 단어의 tnum return
 
 	public List<String> selecttag(int num); // 게시물에 연결된 모든 태그 가져오기
 
