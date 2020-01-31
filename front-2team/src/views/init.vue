@@ -10,20 +10,21 @@
 
 <script>
 
+import axios from 'axios';
 import ModalLogin from '../components/init/ModalLogin.vue';
 import JoinUs from '../components/init/JoinUs.vue';
-import store from '../vuex/store'
-import axios from 'axios'
+import store from '../vuex/store';
+
 export default {
   data() {
-      return{
-        page : true,
-      }
+    return {
+      page: true,
+    };
   },
   computed: {
-      isAuthenticated() {
-          return store.getters.isAuthenticated;
-      }
+    isAuthenticated() {
+      return store.getters.isAuthenticated;
+    },
   },
   components: {
     ModalLogin,

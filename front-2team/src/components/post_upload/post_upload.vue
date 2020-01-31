@@ -28,9 +28,9 @@
 </template>
 
 <script>
-  import './post_upload.css';
+import './post_upload.css';
 
-  export default {
-    data: () => ({}),
-  };
+export default {
+  data: () => ({}),
+};
 </script>

@@ -50,9 +50,9 @@
 </template>
 
 <script>
-  import './post_detail.css';
+import './post_detail.css';
 
-  export default {
-    data: () => ({}),
-  };
+export default {
+  data: () => ({}),
+};
 </script>

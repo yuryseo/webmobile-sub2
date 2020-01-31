@@ -17,35 +17,35 @@
 export default {
   data() {
     return {
-        email: "",
-        password: "",
-        flag: false,
+      email: '',
+      password: '',
+      flag: false,
     };
   },
   methods: {
     toggle() {
-      this.$emit("change");
+      this.$emit('change');
     },
     onSubmit(email, password) {
       this.$store
-        .dispatch("LOGIN", { email, password })
+        .dispatch('LOGIN', { email, password })
         .then(() => this.redirect())
         .catch(({ message }) => (this.msg = message));
     },
     redirect() {
       const { search } = window.location;
-      if (search === "") {
-        this.$router.push("/");
+      if (search === '') {
+        this.$router.push('/');
       } else {
-        const tokens = search.replace(/^\?/, "").split("&");
+        const tokens = search.replace(/^\?/, '').split('&');
         const { returnPath } = tokens.reduce((qs, tkn) => {
-          const pair = tkn.split("=");
+          const pair = tkn.split('=');
           qs[pair[0]] = decodeURIComponent(pair[1]);
           return qs;
         }, {});
         this.$router.push(returnPath);
       }
-    }
+    },
   },
 };
 </script>

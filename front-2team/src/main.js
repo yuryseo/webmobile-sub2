@@ -2,11 +2,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import VModal from 'vue-js-modal';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 import App from './App.vue';
 import routes from './routes/routes';
 import store from './vuex/store';
-import axios from 'axios'
-import VueAxios from 'vue-axios'
+import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false;
 
@@ -20,5 +21,6 @@ const router = new Router({
 new Vue({
   router,
   store,
+  vuetify,
   render: h => h(App),
 }).$mount('#app');

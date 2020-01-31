@@ -34,38 +34,39 @@
     "phone": "string",
     "unum": "string"
 */
-import axios from "axios"
+import axios from 'axios';
+
 export default {
-    data() {
-        return {
-            email: "",
-            interest: "",
-            nickname: "",
-            password: "",
-            cpassword: "",
-            phone: "",
-            unum: ""
-        }
+  data() {
+    return {
+      email: '',
+      interest: '',
+      nickname: '',
+      password: '',
+      cpassword: '',
+      phone: '',
+      unum: '',
+    };
+  },
+  methods: {
+    formSubmit(e) {
+      e.preventDefault();
+      const currentObj = this;
+      this.axios.post('http://70.12.247.104:9090/user', {
+        email: this.email,
+        interest: this.interest,
+        nickname: this.nickname,
+        password: this.password,
+        phone: this.phone,
+        unum: this.unum,
+      })
+        .then((response) => {
+          currentObj.output = response.data;
+        })
+        .catch((error) => {
+          currentObj.output = error;
+        });
     },
-    methods: {
-        formSubmit(e) {
-            e.preventDefault();
-            let currentObj = this;
-            this.axios.post('http://70.12.247.104:9090/user', {
-                email: this.email,
-                interest: this.interest,
-                nickname: this.nickname,
-                password: this.password,
-                phone: this.phone,
-                unum: this.unum
-            })
-            .then(function (response) {
-                currentObj.output = response.data;
-            })
-            .catch(function (error) {
-                currentObj.output = error;
-            });
-        }
-    }
-}
+  },
+};
 </script>

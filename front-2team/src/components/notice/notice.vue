@@ -12,9 +12,9 @@
 </template>
 
 <script>
-  import './notice.css';
+import './notice.css';
 
-  export default {
-    data: () => ({}),
-  };
+export default {
+  data: () => ({}),
+};
 </script>
