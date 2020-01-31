@@ -8,17 +8,15 @@
 </template>
 
 <script>
-
-import login from '@/components/member/login.vue';
-import signup from '@/components/member/signup.vue';
-
-export default {
-
-  components: {
-    login,
-    signup
-  }
-  
-};
-
+  import login from '@/components/member/login.vue';
+  import signup from '@/components/member/signup.vue';
+  export default {
+    components: {
+      login,
+      signup
+    }
+  };
 </script>
+
+
+<style scoped src='../components/member/member.css'/>

@@ -4,15 +4,13 @@
             <!-- <div class="inner_box" v-if="postlist.privacy === 'all' "> -->
                 <h2>{{postlist.title}}</h2>
                 <router-link v-bind:to="{name:'Petdetail'}">
-                    <img src="../../assets/mainpage/img1.png">
+                    <img src="../../images/mainpage/img4.jpg">
                 </router-link>
                 <h2></h2>
                 <p>{{postlist.contents}}</p>
-                <div class="inner_box_bottom">
-                    <span class="date">{{postlist.date}}</span>
-                    <span class="likes">{{postlist.likes}}</span>
-                    <span class="comments">{{postlist.comments}}</span>
-                </div>
+                <!-- <div class="date">{{postlist.date}}</div>
+                <div class="likes">좋아요 {{postlist.likes}} 개</div>
+                <div class="comments">댓글 {{postlist.comments}} 개</div> -->
             <!-- </div> -->
 
         </div>
