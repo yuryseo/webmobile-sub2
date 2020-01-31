@@ -1,0 +1,70 @@
+.contents { /* 화면 중앙 정렬*/
+    position:absolute;
+    top:0;right:0;bottom:20%;left:0;
+    display:flex;
+    display:-webkit-flex;
+    -webkit-align-item:center;
+    align-items:center;
+    -webkit-justify-content:center;
+    justify-content:center;
+}
+
+.tabs { /* 탭 초기 세팅 */
+    float: none;
+    list-style: none;
+    position: absolute;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.tabs div { /* 탭 내용 감싸기 */
+    float: left;
+    display: block;
+}
+
+.tabs input[type="radio"] { /* 라디오 버튼을 탭 모양으로! */
+    position: absolute;
+    top: 20px; /* 라디오 버튼 가리기용*/
+}
+
+.tabs label { /* 탭 제목 */
+    display: block;
+    padding: 10px 20px; /* 높이 너비 */
+    border-radius: 20% 20% 0 0;
+    font-size: 15px;
+    font-weight: normal;
+    background: #e275b8;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+}
+
+.tabs label:hover {
+    background: #cf68b0; /* 탭 부분 마우스올렸을 때 색상바꿈 */
+}
+
+.tabs .tab-content { /* 활성화 된 탭 부분 */
+    display: none;
+    width: 100%;
+    font-size: 15px;
+    padding: 20%;
+    position: absolute;
+    left: 0;
+    background: #c54092; 
+    float: right;
+}
+
+.tab-content .form-input {
+    width: 40%;
+    font-size: 2px;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.tabs [id^="tab"]:checked + label { /* 클릭된 탭 부분 색상 */
+    background: #c54092; 
+}
+
+.tabs [id^="tab"]:checked ~ [id^="tab-content"] { /* 클릭되지 않은 부분 비활성화 */
+    display: block;
+}

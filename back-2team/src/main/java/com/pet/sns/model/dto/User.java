@@ -1,11 +1,18 @@
 package com.pet.sns.model.dto;
 
 public class User {
+	private String unum;
 	private String email;
 	private String password;
 	private String nickname;
 	private String phone;
 	private String interest;
+
+	@Override
+	public String toString() {
+		return "User [unum=" + unum + ", email=" + email + ", password=" + password + ", nickname=" + nickname
+				+ ", phone=" + phone + ", interest=" + interest + "]";
+	}
 
 	public User() {
 	}
@@ -21,6 +28,14 @@ public class User {
 		this.nickname = nickname;
 		this.phone = phone;
 		this.interest = interest;
+	}
+
+	public String getUnum() {
+		return unum;
+	}
+
+	public void setUnum(String unum) {
+		this.unum = unum;
 	}
 
 	public String getEmail() {

@@ -4,9 +4,17 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.pet.sns.model.dto.User"   		alias="user"/>
+		<typeAlias type="com.pet.sns.model.dto.Post"   		alias="post"/>
+		<typeAlias type="com.pet.sns.model.dto.Post_Tag"   		alias="pt"/>
+		<typeAlias type="com.pet.sns.model.dto.Comment"   	alias="comment"/>
+		<typeAlias type="com.pet.sns.model.dto.Pet"   		alias="pet"/>
+		<typeAlias type="com.pet.sns.model.dto.Tag"   		alias="tag"/>
 	</typeAliases>
 	<mappers>
 	 <mapper resource="config/UserMapper.xml" />
+	 <mapper resource="config/CommentQuery.xml" />
+	 <mapper resource="config/PostQuery.xml" />
+	 <mapper resource="config/PetMapper.xml" />
 	</mappers>
 </configuration>
 

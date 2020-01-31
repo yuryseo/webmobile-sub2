@@ -1,0 +1,28 @@
+#wrap {
+    width: 1000px;
+    height: 900px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.noti {
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(255, 99, 71, 0.507);
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+.notice_box {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* background-color: rgba(250, 235, 215, 0.432); */
+    margin-top: 10px;
+}
+
+.notices {
+    background-color: rgba(29, 136, 136, 0.733);
+    border-radius: 16px;
+}
