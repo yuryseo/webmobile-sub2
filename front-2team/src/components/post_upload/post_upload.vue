@@ -2,21 +2,35 @@
   <div id="wrap">
     <div class="post_upload">
       <section class="post photo_upload">
-          드래그 하거나 클릭하여 업로드
+        <v-file-input label="File input" filled prepend-icon="mdi-camera"></v-file-input>
       </section>
 
       <section class="post text_upload">
         <header class="post_title">
-          제목
+          <v-col cols="12" sm="12">
+            <v-text-field label="제목" single-line solo></v-text-field>
+          </v-col>
         </header>
 
         <div class="posting">
-          <section class="post_content">내용</section>
-          <section class="hashtags">#강아지 #산책</section>
+          <section class="post_content">
+            <v-col cols="12" md="12">
+              <v-textarea solo name="input-7-4" label="내용"></v-textarea>
+            </v-col>
+          </section>
+          <section class="hashtags">
+            <v-col cols="12" sm="12">
+              <v-text-field label="해시태그" single-line solo></v-text-field>
+            </v-col>
+          </section>
         </div>
 
         <div class="public">
-          공개범위설정
+          <v-radio-group v-model="row" row>
+            <v-radio label="전체공개" value="radio-1"></v-radio>
+            <v-radio label="친구공개" value="radio-2"></v-radio>
+            <v-radio label="비공개" value="radio-3"></v-radio>
+          </v-radio-group>
         </div>
 
         <div class="save">
@@ -28,9 +42,8 @@
 </template>
 
 <script>
-import './post_upload.css';
-
 export default {
   data: () => ({}),
 };
 </script>
+<style scoped src='./post_upload.css'/>

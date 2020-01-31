@@ -33,36 +33,36 @@
 .post_title {
     height: 50px;
     line-height: 50px;
-    background-color: rgba(97, 35, 69, 0.61);
+    /* background-color: rgba(97, 35, 69, 0.61); */
     border-radius: 16px;
 }
 
 .posting {
     height: 240px;
-    background-color:rgba(177, 19, 106, 0.589);
+    /* background-color:rgba(177, 19, 106, 0.589); */
     border-radius: 16px;
 }
 
 .post_content {
-    background-color: rgba(247, 125, 55, 0.432);
+    /* background-color: rgba(247, 125, 55, 0.432); */
     height: 170px;
     border-radius: 16px;
 }
 
 .hashtags {
-    background: rgba(167, 89, 45, 0.637);
+    /* background: rgba(167, 89, 45, 0.637); */
     border-radius: 16px;
 }
 
 .public {
     position: relative;
     height: 55px;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 16px;
 }
 
 .save {
-    background-color: aqua;
+    /* background-color: aqua; */
     border-radius: 16px;
 }
 
