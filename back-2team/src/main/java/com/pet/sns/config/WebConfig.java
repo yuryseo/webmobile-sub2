@@ -11,7 +11,9 @@ import com.pet.sns.model.util.JwtInterceptor;
 public class WebConfig implements WebMvcConfigurer {
     private static final String[] EXCLUDE_PATHS = {
             "/member/**",
-            "/error/**"
+            "/error/**",
+            "/v2/api-docs", "/swagger-resources/**",
+            "/swagger-ui.html", "/webjars/**", "/swagger/**"
     };
 
     @Autowired
