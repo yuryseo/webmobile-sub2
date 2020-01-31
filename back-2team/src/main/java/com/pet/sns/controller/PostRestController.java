@@ -125,7 +125,7 @@ public class PostRestController {
 	public ResponseEntity<Map<String, Object>> update(@RequestBody Post_Tag pt) {
 		System.out.println("post update...........");
 		// 해시태그도
-		//postservice.update(pt.getPost());
+		postservice.update(pt.getPost());
 		return handleSuccess("게시물 수정 완료");
 	}
 
