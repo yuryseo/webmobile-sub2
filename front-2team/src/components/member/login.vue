@@ -18,7 +18,6 @@ export default {
     return {
         email: "",
         password: "",
-        check : ""
     };
   },
   methods: {
@@ -29,6 +28,7 @@ export default {
         axios.post('http://70.12.247.104:9090/userlogin', { email, password })
             .then(res => {
                 if (res.status === 200) {
+                    alert(res.data)
                     if(res.data==true){
                         this.$router.push({name: 'Mainpage'}) ;
                     }else{
