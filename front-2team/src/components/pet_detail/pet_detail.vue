@@ -2,7 +2,7 @@
     <div class="parent_box">
         <div class="left_box">
             <img
-            src="../../images/pet_detail/profile_test.jpg"
+            src="../../images/pet_detail/pet_profile_test.jpg"
             id="profile" width="200" height="200">
         </div>
 
