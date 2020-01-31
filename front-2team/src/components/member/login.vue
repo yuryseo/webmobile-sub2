@@ -7,6 +7,14 @@
             <input type="password" v-model="password" placeholder="비밀번호 입력" /> <br/><br/>
             <br/>
             <button v-on:click="userlogin">로그인</button>
+            <br/><br/>
+            <hr>
+            <br/>
+            <button>카카오톡</button>
+            <br/><br/>
+            <button>네이버</button>
+            <br/><br/>
+            <button>구글</button>
         </div>
     </div>
 </template>
